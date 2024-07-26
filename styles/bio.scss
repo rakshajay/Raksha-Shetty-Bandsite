@@ -1,62 +1,50 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
-@use "./partials/tyopgraphy" as *;
-
+@use "./partials/typography" as *;
 
 body {
     width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
-
 }
 
 .header {
-
     display: flex;
     text-align: center;
     flex-direction: column;
     background-color: $BandSite-Black;
     color: $White;
-    @include mobile-page-header;
+    
 
     &__text {
         @include flex-space-around;
 
-        @mixin mobile-sub-header {
-
-
-            h3 {
-                margin: 0;
-                font-style: 'Avenir Next';
-            }
+        h3 {
+            margin: 0;
+            @include mobile-footer-copy;
         }
     }
 }
 
 main {
-
-
     .hero {
         height: 12.75rem;
-        background: linear-gradient(0deg, rgba(($BandSite-Black), 0.5), rgba(($BandSite-Black), 0.5)), url("/assets/Images/hero-bio.jpg");
+        background: linear-gradient(0deg, rgba($BandSite-Black, 0.5), rgba($BandSite-Black, 0.5)), url("/assets/Images/hero-bio.jpg");
         background-size: 100%;
         display: flex;
         align-items: center;
 
         &__text {
             position: absolute;
-
             z-index: 1;
             color: $White;
             margin: 1rem;
 
-
             h1 {
-                font-family: 'Avenir Next';
+                @include mobile-footer-copy;
             }
         }
-
     }
 
     .mid {
@@ -77,7 +65,6 @@ main {
                 }
             }
         }
-
     }
 
     .bottom {
@@ -93,16 +80,13 @@ main {
             flex-direction: column;
             gap: 1rem;
             margin: 0;
-            flex-wrap: wrap ;
+            flex-wrap: wrap;
 
             img {
                 position: relative;
                 width: 100%;
-
             }
-
         }
-
     }
 }
 
@@ -111,22 +95,21 @@ footer {
     color: $White;
     padding: 1rem;
 
- 
-
     .footer-text {
         &__hide-mobile {
             display: none;
         }
-        &__top{
-            &-icons{
+
+        &__top {
+            &-icons {
                 display: flex;
-                gap:2rem;
+                gap: 2rem;
             }
         }
     }
 
-    .footer-address{
-        &__span{
+    .footer-address {
+        &__span {
             display: block;
         }
     }
