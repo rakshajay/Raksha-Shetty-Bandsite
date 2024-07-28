@@ -33,6 +33,11 @@ body {
     padding-bottom: 0;
   }
 }
+@media (min-width: 1200px) {
+  .header {
+    padding: 0 5rem;
+  }
+}
 .header__logo {
   display: flex;
   align-items: center;
@@ -59,12 +64,10 @@ body {
   text-align: center;
   padding-bottom: 0.5rem;
 }
-.header__text-link:hover,
-.header__text-link :active {
+.header__text-link:hover, .header__text-link:active {
   border-bottom: 0.1875rem solid #FFFFFF;
 }
-.header__text-link:hover h3,
-.header__text-link :active h3 {
+.header__text-link:hover h3, .header__text-link:active h3 {
   font-weight: 600;
 }
 @media (min-width: 768px) {
@@ -76,7 +79,7 @@ body {
 main .hero {
   height: 58vw;
   background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("/assets/Images/hero-bio.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
@@ -89,7 +92,6 @@ main .hero__text {
   font-family: "Avenir Next";
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
 }
 @media (min-width: 768px) {
   main .hero__text {
@@ -97,13 +99,26 @@ main .hero__text {
     font-family: "Avenir Next";
     font-size: 3.75rem;
     line-height: 4.25rem;
-    font-weight: bold;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1200px) {
+  main .hero__text {
+    margin: 7.8rem;
+    font-family: "Avenir Next";
+    font-size: 3.6rem;
     font-weight: 600;
   }
 }
 @media (min-width: 768px) {
   main .hero {
     background-position: bottom;
+  }
+}
+@media (min-width: 1200px) {
+  main .hero {
+    height: 38rem;
+    background-position: 0% -2em;
   }
 }
 main .mid {
@@ -114,24 +129,25 @@ main .mid {
     margin: 0 5rem;
   }
 }
+@media (min-width: 1200px) {
+  main .mid {
+    margin: 0 12rem;
+  }
+}
 main .mid__headline h1 {
   font-family: "Avenir Next";
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
-  font-weight: 400;
   color: #323232;
-  margin: 0.6rem 0;
-  font-weight: 600;
+  margin: 0.8rem 0;
 }
 @media (min-width: 768px) {
   main .mid__headline h1 {
     font-family: "Avenir Next";
     font-size: 2.25rem;
     line-height: 2.75rem;
-    margin-top: 2rem;
-    margin-left: -3.5rem;
-    margin-bottom: 1.5rem;
+    margin: 2rem 0 1.5rem -3.5rem;
   }
 }
 main .mid__content {
@@ -151,12 +167,22 @@ main .mid__content-img img {
 }
 @media (min-width: 768px) {
   main .mid__content-img img {
-    bottom: -2.25vh;
+    bottom: -2.2rem;
+  }
+}
+@media (min-width: 1200px) {
+  main .mid__content-img img {
+    bottom: -3rem;
   }
 }
 @media (min-width: 768px) {
   main .mid__content-img {
-    height: 41vw;
+    height: 42vw;
+  }
+}
+@media (min-width: 1200px) {
+  main .mid__content-img {
+    height: 36vw;
   }
 }
 main .mid__content h2 {
@@ -174,13 +200,25 @@ main .mid__content h2 {
     margin-bottom: 1rem;
   }
 }
-main .mid__content #mid__content-text {
+@media (min-width: 1200px) {
+  main .mid__content h2 {
+    margin-top: 2rem;
+  }
+}
+main .mid__content #vocalist {
   margin-top: 0.25rem;
 }
 @media (min-width: 768px) {
-  main .mid__content #mid__content-text {
+  main .mid__content #vocalist {
     font-size: 1.1rem;
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0 3rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1200px) {
+  main .mid__content #vocalist {
+    font-size: 0.8rem;
+    margin: 1rem 0 3rem;
     font-weight: 600;
   }
 }
@@ -189,8 +227,7 @@ main .mid__content h3 {
   font-size: 0.875rem;
   line-height: 1.5rem;
   font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
+  margin: 1.5rem 0 0;
 }
 @media (min-width: 768px) {
   main .mid__content h3 {
@@ -210,7 +247,6 @@ main .mid__content-paragraph p {
   font-family: "Avenir Next";
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-weight: 400;
   padding-right: 0.7rem;
 }
 @media (min-width: 768px) {
@@ -218,7 +254,6 @@ main .mid__content-paragraph p {
     font-family: "Avenir Next";
     font-size: 0.875rem;
     line-height: 1.375rem;
-    font-weight: 400;
   }
 }
 main .bottom {
@@ -230,11 +265,15 @@ main .bottom {
     padding: 2.2rem;
   }
 }
+@media (min-width: 1200px) {
+  main .bottom {
+    padding: 2.2rem 7rem 2.2rem 7rem;
+  }
+}
 main .bottom__text h2 {
   font-family: "Avenir Next";
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
   margin: 0.6rem 0 1rem;
   color: #323232;
 }
@@ -253,11 +292,8 @@ main .bottom__imgs {
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  margin: 0;
-  flex-wrap: wrap;
 }
 main .bottom__imgs img {
-  position: relative;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -283,6 +319,11 @@ main .bottom__imgs img {
     padding: 2.2rem;
   }
 }
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.2rem 7rem 2.2rem 7rem;
+  }
+}
 .footer-text__hide-mobile {
   display: none;
 }
@@ -295,8 +336,7 @@ main .bottom__imgs img {
   font-family: "Avenir Next";
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
-  margin: 0.8rem 0 1rem 0;
+  margin: 0.8rem 0 1rem;
 }
 @media (min-width: 768px) {
   .footer-text__top h2 {
@@ -323,12 +363,6 @@ main .bottom__imgs img {
   }
 }
 @media (min-width: 768px) {
-  .footer-text__top {
-    display: flex;
-    flex-direction: row;
-  }
-}
-@media (min-width: 768px) {
   .footer-text {
     display: flex;
     flex-direction: row;
@@ -346,6 +380,12 @@ main .bottom__imgs img {
     justify-content: space-between;
   }
 }
+@media (min-width: 1200px) {
+  .footer-address {
+    justify-content: flex-start;
+    gap: 4rem;
+  }
+}
 .footer-address h3 {
   font-family: "Avenir Next";
   font-size: 0.875rem;
@@ -357,7 +397,6 @@ main .bottom__imgs img {
   font-family: "Avenir Next";
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-weight: 400;
   margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
@@ -365,7 +404,6 @@ main .bottom__imgs img {
     font-family: "Avenir Next";
     font-size: 0.875rem;
     line-height: 1.25rem;
-    font-weight: 400;
   }
 }
 .footer-text__hide-desktop {
@@ -381,12 +419,8 @@ main .bottom__imgs img {
   font-size: 0.7rem;
   margin-top: 1rem;
 }
-@media (min-width: 768px) and (min-width: 768px) {
+@media (min-width: 768px) {
   .footer-copyright p {
-    font-family: "Avenir Next";
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 1.5rem 0;
   }
 }/*# sourceMappingURL=bio.css.map */
