@@ -10,28 +10,68 @@ body {
 }
 
 .header {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
     background-color: $BandSite-Black;
-    color: $White;
     
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        padding: 0 2rem;
+        gap: 4rem;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem;
+    }
 
     &__text {
         @include flex-space-around;
+        gap: 4rem;
 
         h3 {
             margin: 0;
-            @include mobile-footer-copy;
+            @include mobile-sub-header;
+            font-weight: 400;
+            color: $Mercury;
+        }
+
+        &-link {
+            border-bottom: 0.1875rem solid transparent;
+            width: 50%;
+            text-align: center;
+            padding-bottom: .5rem;
+
+            &:hover,
+            :active {
+                border-bottom: 0.1875rem solid $White;
+
+                h3 {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        @include tablet {
+            h3 {
+                padding: 1.8rem 0 .8rem;
+            }
         }
     }
 }
 
+
+
 main {
     .hero {
-        height: 12.75rem;
+        height: 58vw;
         background: linear-gradient(0deg, rgba($BandSite-Black, 0.5), rgba($BandSite-Black, 0.5)), url("/assets/Images/hero-bio.jpg");
         background-size: 100%;
+        background-position: center;
         display: flex;
         align-items: center;
 
@@ -40,17 +80,48 @@ main {
             z-index: 1;
             color: $White;
             margin: 1rem;
+            @include mobile-section-header;
 
-            h1 {
-                @include mobile-footer-copy;
+            @include tablet {
+                margin: 2rem;
+                @include tablet-page-header;
+                font-weight: 600;
             }
+        }
+
+        @include tablet {
+            background-position: bottom;
         }
     }
 
     .mid {
         padding: 1rem;
 
+        @include tablet {
+            @include tablet-margin;
+        }
+
+        &__headline {
+            h1 {
+                @include mobile-section-header;
+                font-weight: 400;
+                color: $BandSite-Black;
+                margin: 0.6rem 0;
+                font-weight: 600;
+
+                @include tablet {
+                    @include tablet-section-header;
+
+                    margin-top: 2rem;
+                    margin-left: -3.5rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+
         &__content {
+            color: $BandSite-Black;
+
             &-img {
                 overflow: hidden;
                 height: 48vw;
@@ -59,9 +130,68 @@ main {
                 img {
                     width: 100%;
                     object-fit: cover;
-                    display: block;
                     position: absolute;
                     bottom: 0;
+
+                    @include tablet {
+                        bottom: -2.25vh;
+                    }
+                }
+
+                @include tablet {
+                    height: 41vw;
+                }
+
+
+            }
+
+            h2 {
+                @include mobile-sub-header;
+                font-weight: 600;
+                margin-bottom: 0;
+
+                @include tablet {
+                    font-family: 'Avenir Next';
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            #mid__content-text{
+                margin-top: 0.25rem;
+                @include tablet {
+                    font-size:1.1rem;
+                    margin: 1rem 0 3rem 0;
+                    font-weight: 600;
+                }
+            }
+
+            h3 {
+                @include mobile-sub-header;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                margin-bottom: 0;
+
+                @include tablet {
+                    @include tablet-sub-header;
+                }
+            }
+
+            &-paragraph {
+                @include tablet {
+                    display: flex;
+                    flex-direction: row;
+                    gap:.85rem;
+                }
+
+                p {
+                    @include mobile-body-copy;
+                    padding-right: 0.7rem;
+
+                    @include tablet {
+                        @include tablet-body-copy;
+                    }
                 }
             }
         }
@@ -71,8 +201,25 @@ main {
         background-color: $Alabaster;
         padding: 1rem;
 
-        h2 {
-            margin-top: 0;
+        @include tablet {
+            padding: 2.2rem;
+
+        }
+
+        &__text {
+
+            h2 {
+                @include mobile-section-header;
+                margin: 0.6rem 0 1rem;
+                color: $BandSite-Black;
+
+                @include tablet {
+
+                    @include tablet-section-header;
+                    font-weight: 600;
+                    margin: 0.8rem 0 2rem;
+                }
+            }
         }
 
         &__imgs {
@@ -86,31 +233,134 @@ main {
                 position: relative;
                 width: 100%;
             }
+
+            @include tablet {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: center;
+                gap: 1.5rem;
+
+
+
+                img {
+                    width: calc(33.33% - 1rem);
+                }
+            }
         }
     }
 }
 
-footer {
+.footer {
     background-color: $BandSite-Black;
     color: $White;
     padding: 1rem;
 
-    .footer-text {
+    @include tablet {
+        padding: 2.2rem;
+    }
+
+    &-text {
         &__hide-mobile {
             display: none;
+
+            @include tablet {
+                display: block;
+            }
         }
 
+
         &__top {
+            h2 {
+                @include mobile-section-header;
+                margin: .8rem 0 1rem 0;
+                @include tablet {
+                    @include tablet-section-header;
+                }
+            }
+
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2.4rem;
+            }
+
             &-icons {
                 display: flex;
                 gap: 2rem;
+
+                @include tablet {
+                    height: 1.5rem;
+                }
+            }
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+            }
+
+        }
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    }
+
+    &-address {
+        &__span {
+            display: block;
+        }
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        h3 {
+            @include mobile-sub-header;
+            margin-top: 1.8rem;
+            font-weight: 600;
+
+        }
+
+        p {
+            @include mobile-footer-copy;
+            margin-bottom: 1rem;
+
+            @include tablet {
+                @include tablet-footer-copy;
             }
         }
     }
 
-    .footer-address {
-        &__span {
-            display: block;
+    &-text__hide-desktop {
+        margin-top: 2.8rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &-copyright {
+        p { 
+            font-family: 'Avenir Next' ;
+            font-size: 0.7rem;
+            margin-top: 1rem;
+        }
+
+        @include tablet {
+            p {
+                @include tablet {
+                    @include tablet-footer-copy;
+                    margin: 1.5rem 0 1.5rem 0;
+                }
+            }
         }
     }
 }
