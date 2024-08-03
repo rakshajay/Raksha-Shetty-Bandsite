@@ -282,6 +282,51 @@ main {
             }
         }
     }
+
+    .comments{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        
+        h1{
+            @include mobile-section-header;
+            font-weight: 600;
+            margin: 0;
+        }
+        &__forms{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap:1rem;
+            img{
+                width: 20vw;
+                
+                object-fit: cover;
+                
+            }
+
+            &-content{
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+             gap: 1.5rem;
+            }
+
+            &-sections{
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+             @include mobile-lables-buttons;
+             font-weight: 600;
+             color: $Silver;
+            }
+            
+            
+        }
+
+       
+
+    }
 }
 
 .footer {

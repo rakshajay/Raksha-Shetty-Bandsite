@@ -1,8 +1,8 @@
-  #Ignore scss map files
-    *.css.map
+# Ignore scss map files
+*.css.map
 
- #Ignore DS_Store files
-    .DS_Store
+# Ignore DS_Store files
+.DS_Store
 
- #Ignore .vscode files
-.vscode
+# Ignore .vscode files
+.vscode/

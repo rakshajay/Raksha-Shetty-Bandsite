@@ -314,6 +314,45 @@ main .bottom__imgs img:hover {
     width: calc(33.33% - 1rem);
   }
 }
+main .comments {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+main .comments h1 {
+  font-family: "Avenir Next";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+main .comments__forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+}
+main .comments__forms img {
+  width: 20vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .comments__forms-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+main .comments__forms-sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Avenir Next";
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: #AFAFAF;
+}
 
 .footer {
   background-color: #323232;

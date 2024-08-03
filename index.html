@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bio</title>
     <link rel="stylesheet" href="./styles/bio.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="./scripts/index-page.js" defer></script>
 </head>
 
 <body>
@@ -90,6 +91,25 @@
                 <img src="./assets/Images/Photo-gallery-9.jpg" alt="concert images">
             </div>
         </section>
+        <section class="comments">
+            <h1>Join the Conversation</h1>
+            <div class="comments__forms">
+                <div><img src="/assets/Images/Mohan-muruge.jpg" alt="Face of human"></div>
+                <div>
+                    <form class="comments__forms-content">
+                        <div class="comments__forms-sections"><label for="fullName">NAME</label>
+                            <input type="text" placeholder="Enter your name" name="fullName" id="fullName" required>
+                        </div>
+                        <div class="comments__forms-sections"><label for="comments">COMMENTS</label>
+                            <textarea placeholder="Add a new comment" name="comments" id="comments"></textarea>
+                        </div>
+                        <button type="submit" class="comments__button">Comment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="comments-list"></section>
+
     </main>
 
     <footer class="footer">
@@ -98,7 +118,7 @@
                 <h2>Get in Touch</h2>
                 <div class="footer-text__top-icons">
                     <img src="./assets/Icons/SVG/Icon-instagram.svg" alt="Instagram icon">
-                    <img src="./assets/Icons/SVG/Icon-facebook.svg" alt="f icon">
+                    <img src="./assets/Icons/SVG/Icon-facebook.svg" alt="facebook icon">
                     <img src="./assets/Icons/SVG/Icon-twitter.svg" alt="Instagram icon">
                 </div>
             </div>
@@ -127,7 +147,7 @@
             <img src="./assets/Logo/Logo-bandsite.svg" alt="logo">
         </div>
         <div class="footer-copyright">
-            <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>
+            <p>Copyright The Bees Knees &copy; 2023 All Rights Reserved</p>
         </div>
 
     </footer>
