@@ -40,6 +40,26 @@ function renderShowList() {
     const tittle = document.createElement("h1");
     tittle.innerText = "Shows";
 
+    const subTittleContainer = document.createElement("div");
+    subTittleContainer.classList.add("shows-subtitle");
+
+    const subTittleDateContainer = document.createElement("div");
+    const subTittleDate = document.createElement("h2");
+    subTittleDate.innerText = "DATE";
+
+    const subTittleVenueContainer = document.createElement("div");
+    const subTittleVenue = document.createElement("h2");
+    subTittleVenue.innerText = "VENUE";
+
+    const subTittleLocationContainer = document.createElement("div");
+    const subTittleLocation = document.createElement("h2");
+    subTittleLocation.innerText = "LOCATION";
+
+    const dummyButtonContainer = document.createElement("div");
+    dummyButtonContainer.setAttribute("id","hide")
+    const dummyButtonText = document.createElement("div");
+    dummyButtonText.innerText = "DUMMY";
+
     const showListContainer = document.createElement("div");
     showListContainer.classList.add("shows-list");
 
@@ -62,7 +82,7 @@ function renderShowList() {
         dateHeading.innerText = "DATE";
 
         const date = document.createElement("h3");
-        date.setAttribute("id", "date-id");
+        date.setAttribute("id", "date-id")
         date.innerText = shows[i].date;
 
         /*---------Venue-Container-----------*/
@@ -104,6 +124,20 @@ function renderShowList() {
 
         showCard.appendChild(tittleContainer);
         tittleContainer.appendChild(tittle);
+
+        showCard.appendChild(subTittleContainer);
+
+        subTittleContainer.appendChild(subTittleDateContainer);
+        subTittleDateContainer.appendChild(subTittleDate);
+
+        subTittleContainer.appendChild(subTittleVenueContainer);
+        subTittleVenueContainer.appendChild(subTittleVenue);
+
+        subTittleContainer.appendChild(subTittleLocationContainer);
+        subTittleLocationContainer.appendChild(subTittleLocation);
+
+        subTittleContainer.appendChild(dummyButtonContainer);
+        dummyButtonContainer.appendChild(dummyButtonText);
 
         showCard.appendChild(showListContainer);
 
