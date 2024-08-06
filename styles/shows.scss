@@ -23,6 +23,7 @@ body {
 
     @include desktop {
         padding: 0 5rem;
+        width: 100%;
     }
 
     &__logo {
@@ -74,6 +75,7 @@ body {
 }
 
 main {
+    
     .hero {
         height: 86vw;
         background: linear-gradient(0deg, rgba($BandSite-Black, 0.5), rgba($BandSite-Black, 0.5)), url("/assets/Images/hero-shows.jpg");
@@ -84,6 +86,11 @@ main {
         @include tablet {
             height: 62vw;
             background-position: 0rem -5rem;
+        } 
+        @include desktop{
+            height: 48vw;
+            background-position: 0rem -9rem;
+            align-items: center;
         }
 
         &__content {
@@ -109,8 +116,11 @@ main {
                         @include tablet-page-header;
                         font-weight: 600;
                     }
+                    @include desktop{
+                        width: 38vw;
+                    }
                 }
-
+                
             }
 
             h2 {
@@ -136,6 +146,12 @@ main {
                         width: 54.5vw;
                     }
                 }
+                @include desktop {
+                    iframe {
+                        height: 52%;
+                        width: 24.5vw;
+                    }
+                }
             }
 
             @include tablet {
@@ -150,19 +166,24 @@ main {
             }
 
             @include desktop {
-                height: 38rem;
+                width: 100%;
+                height: 18rem;
                 background-position: 0 -15rem;
-                margin: 7.8rem;
                 font-family: 'Avenir Next';
                 font-size: 3.6rem;
                 font-weight: 600;
+                flex-direction: row;
+                justify-content: space-around;
+                
             }
-
+            
+            
 
         }
 
 
     }
+    
 
     .shows {
         &-title {
@@ -281,8 +302,13 @@ main {
                 font-weight: 600;
             }
         }
+        @include tablet{
+            width: 100%;
+        }
     }
-    
+    @include desktop{
+        width: 100%;
+    }
 
 }
 

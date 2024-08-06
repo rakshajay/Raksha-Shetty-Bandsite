@@ -16,35 +16,59 @@ let comments = [
     }
 ];
 
-const commentForm = document.querySelector(".comments__forms-content");
+const commentForm = document.querySelector(".comments-forms__content");
 const commentCard = document.querySelector(".comments-list");
+
 
 function loopAndComment() {
     commentCard.innerHTML = "";
 
     for (let i = 0; i < comments.length; i++) {
-        const commentCards = document.createElement('li');
-        commentCards.classList.add('comment-item');
+        const commentItem = document.createElement('div');
+        commentItem.classList.add('comments-list__item');
+        
+        const commentImgContainer = document.createElement('div');
+        commentImgContainer.classList.add('comments-list__img');
+       
+        const commentImg = document.createElement('div');
+        commentImg.classList.add('comments-list__img-color');
+                
+        const commentText = document.createElement('div');
+        commentText.classList.add('comments-list__text');
 
+        const textFirst = document.createElement('div');
+        textFirst.classList.add('comments-list__text-first');
+        
         const person = document.createElement('h3');
         person.classList.add('name');
         person.innerText = comments[i].name;
 
+        const currentTime = document.createElement('h2');
+        currentTime.classList.add('time');
+        currentTime.innerText = comments[i].time;
+
+        const textSecond = document.createElement('div');
+        textSecond.classList.add('comments-list__text-second');
+        
         const comment = document.createElement('p');
         comment.classList.add('comment');
         comment.innerText = comments[i].text;
 
-        const currentTime = document.createElement('span');
-        currentTime.classList.add('time');
-        currentTime.innerText = comments[i].time;
+        textFirst.appendChild(person);
+        textFirst.appendChild(currentTime);
+        textSecond.appendChild(comment);
 
-        commentCards.appendChild(person);
-        commentCards.appendChild(comment);
-        commentCards.appendChild(currentTime);
+        commentText.appendChild(textFirst);
+        commentText.appendChild(textSecond);
 
-        commentCard.appendChild(commentCards);
+        commentItem.appendChild(commentImgContainer);
+        commentItem.appendChild(commentText);
+
+        commentImgContainer.appendChild(commentImg);
+
+        commentCard.appendChild(commentItem);
     }
-} 
+}
 
 commentForm.addEventListener("submit", function(event) {
     event.preventDefault();
