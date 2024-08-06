@@ -12,14 +12,40 @@ body {
 .header {
     background-color: $BandSite-Black;
 
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        padding: 0 2rem;
+
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    @include desktop {
+        padding: 0 5rem;
+        width: 100%;
+    }
+
     &__logo {
         @include flex-center;
-        padding: 0.85rem;
+        padding: 1rem 0 0.4rem 0;
+
+        @include tablet {
+            padding: .8rem 4rem .6rem 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    
     }
 
     &__text {
         @include flex-space-around;
-        gap: 4rem;
+        
+        a {
+            text-decoration: none;
+        }
 
         h3 {
             margin: 0;
@@ -32,8 +58,9 @@ body {
             border-bottom: 0.1875rem solid transparent;
             width: 50%;
             text-align: center;
-            padding-bottom: 0.5rem;
-
+            padding-bottom: 0.4rem;
+            
+            &.active,
             &:hover,
             &:active {
                 border-bottom: 0.1875rem solid $White;
@@ -46,25 +73,14 @@ body {
         }
 
         @include tablet {
+            gap: 4rem;
+
             h3 {
                 padding: 1.8rem 0 0.8rem;
             }
         }
-    }
 
-    @include tablet {
-        display: flex;
-        flex-direction: row;
-        padding: 0 2rem;
-        gap: 4rem;
-        align-items: center;
-        padding-bottom: 0;
     }
-
-    @include desktop {
-        padding: 0 5rem;
-    }
-
 }
 
 main {
@@ -89,7 +105,7 @@ main {
 
             @include desktop {
                 margin: 7.8rem;
-                font-family: 'Avenir Next';
+
                 font-size: 3.6rem;
                 font-weight: 600;
             }
@@ -160,7 +176,7 @@ main {
                 margin-bottom: 0;
 
                 @include tablet {
-                    font-family: 'Avenir Next';
+    
                     font-size: 1.4rem;
                     line-height: 2rem;
                     margin-bottom: .45rem;
@@ -375,7 +391,7 @@ main {
                         background-color: $Alabaster;
                         border-radius: .25rem;
                         box-sizing: border-box;
-                        font-family: 'Avenir Next';
+        
                         font-size: .85rem;
 
                         @include tablet {
@@ -384,7 +400,7 @@ main {
 
                         @include desktop {
                             width: 32vw;
-                            font-family: 'Avenir Next';
+            
                             font-size: .8rem;
                         }
                     }
@@ -400,7 +416,7 @@ main {
                         border-width: .062rem;
                         border-color: $Mercury;
                         border-radius: .25rem;
-                        font-family: 'Avenir Next';
+        
                         font-size: .8rem;
 
                         @include tablet {
@@ -421,7 +437,7 @@ main {
                         background-color: $BandSite-Black;
                         border-radius: .25rem;
                         color: $White;
-                        font-family: 'Avenir Next';
+        
                         font-weight: 600;
                         font-size: .9rem;
                         margin-bottom: 1rem;
@@ -633,7 +649,6 @@ main {
 
     &-copyright {
         p {
-            font-family: 'Avenir Next';
             font-size: 0.7rem;
             margin-top: 1rem;
 

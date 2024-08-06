@@ -33,11 +33,23 @@ body {
         @include tablet {
             padding: .8rem 4rem .6rem 0;
         }
+
+        @include desktop {
+            padding: 1.6rem 4rem 1rem 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
     }
 
     &__text {
         @include flex-space-around;
 
+        a {
+            text-decoration: none;
+        }
 
         h3 {
             margin: 0;
@@ -52,6 +64,7 @@ body {
             text-align: center;
             padding-bottom: 0.4rem;
 
+            &.active,
             &:hover,
             &:active {
                 border-bottom: 0.1875rem solid $White;
@@ -60,6 +73,10 @@ body {
                     font-weight: 600;
                     color: $White;
                 }
+            }
+            
+            @include desktop {
+                padding: .8rem 0rem 1rem 0;
             }
         }
 
@@ -75,7 +92,7 @@ body {
 }
 
 main {
-    
+
     .hero {
         height: 86vw;
         background: linear-gradient(0deg, rgba($BandSite-Black, 0.5), rgba($BandSite-Black, 0.5)), url("/assets/Images/hero-shows.jpg");
@@ -86,22 +103,27 @@ main {
         @include tablet {
             height: 62vw;
             background-position: 0rem -5rem;
-        } 
-        @include desktop{
+        }
+
+        @include desktop {
             height: 48vw;
             background-position: 0rem -9rem;
             align-items: center;
+            padding: 2rem;
         }
 
         &__content {
-            margin: 1rem;
+            margin: 2rem 1rem 2rem 1rem;
+            ;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            box-sizing: border-box;
+            gap: 1rem;
 
             &-text {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 width: 80vw;
                 gap: 1rem;
 
@@ -116,11 +138,24 @@ main {
                         @include tablet-page-header;
                         font-weight: 600;
                     }
-                    @include desktop{
+
+                    @include desktop {
                         width: 38vw;
                     }
                 }
-                
+
+                @include tablet {
+                    gap: .8rem;
+                }
+
+                @include desktop {
+                    width: 40vw;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    gap:1rem;
+                }
+
             }
 
             h2 {
@@ -133,23 +168,30 @@ main {
                 @include tablet {
                     @include tablet-sub-header;
                     font-weight: 600;
-                    margin-top: 1.5rem;
+                    margin-top: .98rem;
                 }
             }
 
             &-sound {
+                display: flex;
+                align-items: center;
                 border-radius: 1rem;
+
+                iframe {
+                    height: 30vw;
+                }
 
                 @include tablet {
                     iframe {
-                        height: 82%;
+                        height: 18vw;
                         width: 54.5vw;
                     }
                 }
+
                 @include desktop {
                     iframe {
                         height: 52%;
-                        width: 24.5vw;
+                        width: 34.5vw;
                     }
                 }
             }
@@ -159,76 +201,94 @@ main {
                 flex-direction: column;
                 justify-content: space-between;
                 background-position: bottom;
-                margin: 2.3rem;
                 @include tablet-page-header;
                 font-weight: 600;
-                gap: 2.8rem;
+                margin: 2.8rem 2.8rem 3.8rem;
             }
 
             @include desktop {
                 width: 100%;
                 height: 18rem;
                 background-position: 0 -15rem;
-                font-family: 'Avenir Next';
                 font-size: 3.6rem;
                 font-weight: 600;
                 flex-direction: row;
                 justify-content: space-around;
-                
+
             }
-            
-            
+
+
 
         }
 
 
     }
-    
+
 
     .shows {
         &-title {
-            font-family: 'Avenir Next';
             font-size: .98rem;
             margin: 2rem 0 1.2rem 1rem;
-    
+
             h1 {
                 font-weight: 600;
-    
+
                 @include tablet {
                     @include tablet-section-header;
                     font-weight: 600;
                     margin: 3rem 0 1.2rem 1rem;
                 }
+
+                @include desktop {
+                    margin: 2rem 0 1.2rem 1rem;
+                    font-weight: 600;
+                }
             }
         }
-    
+
         &-subtitle {
             display: none;
-    
+
             @include tablet {
                 display: flex;
                 @include flex-space-between;
-                gap:9.4rem;
-                margin: 1.4rem 2rem -1.4rem ;
+                gap: 9.4rem;
+                margin: 1.4rem 2rem -1.4rem;
             }
-    
+
+            @include desktop {
+                margin: 4.4rem 2rem -1.4rem;
+            }
+
             h2 {
                 color: $Silver;
                 @include tablet-lables-buttons;
                 font-weight: 600;
+
+                @include tablet {
+                    margin-bottom: 1.6rem;
+                }
+
+                @include desktop {
+                    margin-bottom: 1.6rem;
+                }
             }
-    
+
             #hide {
                 visibility: hidden;
                 width: 20vw;
             }
         }
-    
+
         &-list {
             ul {
                 padding: 0;
+
+                @include tablet {
+                    padding: 0 0 .8rem 0;
+                }
             }
-    
+
             &__li {
                 margin: 1rem 0 0 0;
                 list-style-type: none;
@@ -237,39 +297,42 @@ main {
                 justify-content: space-between;
                 text-align: left;
                 gap: .95rem;
-                border-bottom: 1px solid $Mercury;
-    
+                border-bottom: 1.6px solid $Mercury;
+                position: relative;
+
                 &-item {
                     margin: 0 0 0 1rem;
-    
+
                     h2,
                     h3 {
                         margin: 0;
                     }
-    
+
                     h2 {
                         color: $Silver;
                         @include mobile-lables-buttons;
                         font-weight: 600;
-    
+
                         @include tablet {
                             display: none;
                         }
                     }
-    
+
                     h3 {
                         color: $BandSite-Black;
                         @include mobile-footer-copy;
                         font-weight: 400;
-                        @include tablet{
+
+                        @include tablet {
                             position: absolute;
                             display: flex;
                             justify-content: center;
                             align-items: center;
+                            margin-top: 1rem;
                         }
                     }
                 }
-    
+
                 &-button {
                     button {
                         margin: 0 1rem 1rem 1rem;
@@ -278,36 +341,46 @@ main {
                         background-color: $BandSite-Black;
                         border-radius: .25rem;
                         color: $White;
-                        font-family: 'Avenir Next';
                         font-weight: 600;
                         font-size: .9rem;
-    
+
                         @include tablet {
                             width: 20vw;
                             margin: .4rem 1rem .8rem 1rem;
                         }
                     }
                 }
-    
+
                 @include tablet {
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
-                    margin: .6rem 1rem .6rem 1rem;
-                    text-align: left;
+                    position: relative;
                 }
             }
-    
+
             #date-id {
                 font-weight: 600;
             }
+            @include tablet {
+               margin-left: 1rem;
+               margin-right: 1rem;
+            }
         }
-        @include tablet{
+
+        @include tablet {
             width: 100%;
         }
+
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
     }
-    @include desktop{
+
+    @include desktop {
         width: 100%;
+        margin-right: 18rem;
     }
 
 }
@@ -341,6 +414,7 @@ main {
             h2 {
                 @include mobile-section-header;
                 margin: 0.8rem 0 1rem;
+                font-weight: 600;
 
                 @include tablet {
                     @include tablet-section-header;
@@ -416,7 +490,6 @@ main {
 
     &-copyright {
         p {
-            font-family: 'Avenir Next';
             font-size: 0.7rem;
             margin-top: 1rem;
 

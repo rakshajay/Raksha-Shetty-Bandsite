@@ -1,10 +1,8 @@
 @use "./variables" as *;
 @use "./typography" as *;
 
-@mixin mobile {
-    @media (min-width:320px) {
-        @content;
-    }
+body{
+    font-family: 'Avenir Next';
 }
 
 @mixin tablet {
@@ -20,73 +18,61 @@
 }
 
 @mixin tablet-page-header {
-    font-family: 'Avenir Next';
     font-size: 3.75rem;
     line-height: 4.25rem;
     }
 
 @mixin mobile-page-header {
-    font-family: 'Avenir Next';
     font-size: 1.5rem;
     line-height: 4.25rem;
 }
 
 @mixin tablet-section-header {
-    font-family: 'Avenir Next';
     font-size: 2.25rem;
     line-height: 2.75rem;
 }
 
 @mixin mobile-section-header {
-    font-family: 'Avenir Next';
     font-size: 1.5rem;
     line-height: 2rem;
 }
 
 @mixin tablet-sub-header {
-    font-family: 'Avenir Next';
     font-size: 1.5rem;
     line-height: 2rem;
 }
 
 @mixin mobile-sub-header {
-    font-family: 'Avenir Next';
     font-size: .875rem;
     line-height: 1.5rem;
 }
 
 @mixin tablet-body-copy {
-    font-family: 'Avenir Next';
     font-size: .82rem;
     line-height: 1.2rem;
 }
 
 @mixin mobile-body-copy {
-    font-family: 'Avenir Next';
     font-size: .8125rem;
     line-height: 1.125rem;
 }
 
 @mixin tablet-footer-copy {
-    font-family: 'Avenir Next';
     font-size: .875rem;
     line-height: 1.25rem;
 }
 
 @mixin mobile-footer-copy {
-    font-family: 'Avenir Next';
     font-size: .8125rem;
     line-height: 1.125rem;
 }
 
 @mixin tablet-lables-buttons {
-    font-family: 'Avenir Next';
     font-size: .75rem;
     line-height: 1.25rem;
 }
 
 @mixin mobile-lables-buttons {
-    font-family: 'Avenir Next';
     font-size: .625rem;
     line-height: 1.25rem;
 }
