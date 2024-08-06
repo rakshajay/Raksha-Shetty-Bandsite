@@ -7,5 +7,5 @@
 # Ignore .vscode files
 .vscode/
 
-# Ignore alternative files
-assets\Font\Alternative files
+# Ignore alternative folder
+assets/Font/Alternative files/
