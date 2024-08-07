@@ -429,6 +429,15 @@ main .comments-forms__content-sec input {
     font-size: 0.8rem;
   }
 }
+main .comments-forms__content-sec input:focus {
+  border-color: #323232;
+}
+main .comments-forms__content-sec input.filled {
+  border-color: #E1E1E1;
+}
+main .comments-forms__content-sec input.error {
+  border-color: #D22D2D;
+}
 main .comments-forms__content-sec input::-moz-placeholder {
   color: #000000;
 }
@@ -449,6 +458,15 @@ main .comments-forms__content-sec textarea {
     padding: 1rem;
     height: 8vw;
   }
+}
+main .comments-forms__content-sec textarea.active {
+  border-color: #323232;
+}
+main .comments-forms__content-sec textarea.filled {
+  border-color: #E1E1E1;
+}
+main .comments-forms__content-sec textarea.error {
+  border-color: #D22D2D;
 }
 main .comments-forms__content-sec textarea::-moz-placeholder {
   color: #000000;

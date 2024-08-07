@@ -400,8 +400,19 @@ main {
 
                         @include desktop {
                             width: 32vw;
-            
                             font-size: .8rem;
+                        }
+
+                        &:focus{
+                            border-color: $BandSite-Black;
+                        }
+        
+                        &.filled {
+                            border-color: $Mercury;
+                        }
+        
+                        &.error {
+                            border-color: #D22D2D;
                         }
                     }
 
@@ -422,6 +433,17 @@ main {
                         @include tablet {
                             padding: 1rem;
                             height: 8vw;
+                        }
+                        &.active {
+                            border-color: $BandSite-Black;
+                        }
+        
+                        &.filled {
+                            border-color: $Mercury;
+                        }
+        
+                        &.error {
+                            border-color: #D22D2D;
                         }
                     }
 
@@ -518,7 +540,9 @@ main {
                 }
 
                 &-second {
+                    
                     p {
+                        
                         margin-top: 0;
                         @include mobile-body-copy;
 

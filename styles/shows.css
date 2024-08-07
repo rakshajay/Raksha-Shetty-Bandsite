@@ -308,6 +308,7 @@ main .shows-list__li {
   gap: 0.95rem;
   border-bottom: 1.6px solid #E1E1E1;
   position: relative;
+  background-color: #FFFFFF;
 }
 main .shows-list__li-item {
   margin: 0 0 0 1rem;
@@ -364,6 +365,12 @@ main .shows-list__li-button button {
     flex-direction: row;
     position: relative;
   }
+}
+main .shows-list__li.selected {
+  background-color: #E1E1E1;
+}
+main .shows-list__li:hover {
+  background-color: #FAFAFA;
 }
 main .shows-list #date-id {
   font-weight: 600;
