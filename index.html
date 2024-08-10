@@ -7,7 +7,6 @@
     <title>Bio</title>
     <link rel="stylesheet" href="./styles/bio.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="./scripts/index-page.js" defer></script>
 </head>
 
 <body>
@@ -96,7 +95,7 @@
             <div class="comments-forms">
                 <div class="comments-forms__img"><img src="/assets/Images/Mohan-muruge.jpg" alt="Face of human"></div>
                 <div>
-                    <form class="comments-forms__content">
+                    <form class="comments-forms__content" id="myForm">
                         <div class="comments-forms__content-sec"><label for="fullName">NAME</label>
                             <input type="text" placeholder="Enter your name" name="fullName" id="fullName" required>
                         </div>
@@ -160,7 +159,9 @@
         </div>
 
     </footer>
-
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
+    <script type="module" src="./scripts/index-page.js"></script>
 </body>
 
 </html>

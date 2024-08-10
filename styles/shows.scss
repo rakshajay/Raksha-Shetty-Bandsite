@@ -227,45 +227,45 @@ main {
 
     .shows {
         &-title {
-            font-size: .98rem;
+            font-size: 0.98rem;
             margin: 2rem 0 1.2rem 1rem;
-
+    
             h1 {
                 font-weight: 600;
-
+    
                 @include tablet {
                     @include tablet-section-header;
                     font-weight: 600;
                     margin: 3rem 0 1.2rem 1rem;
                 }
-
+    
                 @include desktop {
                     margin: 2rem 0 1.2rem 1rem;
                     font-weight: 600;
                 }
             }
         }
-
+    
         &-subtitle {
             display: none;
-
+    
             @include tablet {
                 display: flex;
                 @include flex-space-between;
                 gap: 9.4rem;
                 margin: 1.4rem 2rem -1.4rem;
             }
-
+    
             @include desktop {
                 margin: 4.4rem 2rem -1.4rem;
             }
-
+    
             h2 {
                 color: $Silver;
                 @include tablet-lables-buttons;
                 font-weight: 600;
-
-                @include tablet {
+    
+                @include tablet{
                     margin-bottom: 1.6rem;
                 }
 
@@ -273,121 +273,125 @@ main {
                     margin-bottom: 1.6rem;
                 }
             }
-
+    
             #hide {
                 visibility: hidden;
                 width: 20vw;
             }
+            #date{
+                width: 4rem;
+            }
+            #venue{
+                width: 3.8rem;
+            }
         }
-
+    
         &-list {
             ul {
                 padding: 0;
-
+    
                 @include tablet {
-                    padding: 0 0 .8rem 0;
+                    padding: 0 0 0.8rem 0;
                 }
             }
-
+    
             &__li {
-                margin: 1rem 0 0 0;
+                padding: 1rem 0 1rem 0;
                 list-style-type: none;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 text-align: left;
-                gap: .95rem;
+                gap: 0.95rem;
                 border-bottom: 1.6px solid $Mercury;
                 position: relative;
-
+                cursor: pointer;
+                background-color: $White;
+    
+                &.selected {
+                    background-color: $Mercury;
+                }
+    
+                &:not(.selected):hover {
+                    background-color: $Alabaster;
+                }
+    
                 &-item {
                     margin: 0 0 0 1rem;
-
-                    h2,
-                    h3 {
+    
+                    h2, h3 {
                         margin: 0;
                     }
-
+    
                     h2 {
                         color: $Silver;
                         @include mobile-lables-buttons;
                         font-weight: 600;
-
+    
                         @include tablet {
                             display: none;
                         }
                     }
-
+    
                     h3 {
                         color: $BandSite-Black;
                         @include mobile-footer-copy;
                         font-weight: 400;
-
+    
                         @include tablet {
                             position: absolute;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
                             margin-top: 1rem;
                         }
                     }
                 }
-
+    
                 &-button {
+                    text-align: center;
+                    
                     button {
-                        margin: 0 1rem 1rem 1rem;
-                        width: 90vw;
+                       width: 90vw;
                         height: 2.5rem;
                         background-color: $BandSite-Black;
-                        border-radius: .25rem;
+                        border-radius: 0.25rem;
                         color: $White;
                         font-weight: 600;
-                        font-size: .9rem;
-
+                        font-size: 0.9rem;
+    
                         @include tablet {
+                            align-items: center;
                             width: 20vw;
-                            margin: .4rem 1rem .8rem 1rem;
+                            margin: 0 1rem 0 ;
                         }
                     }
                 }
-
+    
                 @include tablet {
-                    display: flex;
                     flex-direction: row;
                     position: relative;
                 }
-
-                background-color: $White;
-
-                &.selected {
-                    background-color: $Mercury;
-                }
-
-                &:hover {
-                    background-color: $Alabaster;
-                }
             }
-
+    
             #date-id {
                 font-weight: 600;
             }
-
+          
             @include tablet {
                 margin-left: 1rem;
                 margin-right: 1rem;
             }
         }
-
+    
         @include tablet {
             width: 100%;
         }
-
+    
         @include desktop {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
         }
     }
+    
 
     @include desktop {
         width: 100%;

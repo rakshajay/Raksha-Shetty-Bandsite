@@ -290,6 +290,11 @@ main .bottom__imgs img {
   filter: grayscale(100%);
   transition: filter 0.5s ease-in-out;
 }
+@media (min-width: 768px) {
+  main .bottom__imgs img {
+    width: calc(33.33% - 1rem);
+  }
+}
 main .bottom__imgs img:hover {
   filter: grayscale(0%);
 }
@@ -301,9 +306,6 @@ main .bottom__imgs img:hover {
     align-content: center;
     gap: 1.5rem;
   }
-}
-main .bottom__imgs img {
-  width: calc(33.33% - 1rem);
 }
 @media (min-width: 768px) {
   main .bottom {
@@ -417,10 +419,14 @@ main .comments-forms__content-sec input {
   border-radius: 0.25rem;
   box-sizing: border-box;
   font-size: 0.85rem;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
 }
 @media (min-width: 768px) {
   main .comments-forms__content-sec input {
     padding: 1rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -434,9 +440,7 @@ main .comments-forms__content-sec input:focus {
 }
 main .comments-forms__content-sec input.filled {
   border-color: #E1E1E1;
-}
-main .comments-forms__content-sec input.error {
-  border-color: #D22D2D;
+  background-color: #FAFAFA;
 }
 main .comments-forms__content-sec input::-moz-placeholder {
   color: #000000;
@@ -452,21 +456,15 @@ main .comments-forms__content-sec textarea {
   border-color: #E1E1E1;
   border-radius: 0.25rem;
   font-size: 0.8rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: #FAFAFA;
 }
 @media (min-width: 768px) {
   main .comments-forms__content-sec textarea {
     padding: 1rem;
     height: 8vw;
   }
-}
-main .comments-forms__content-sec textarea.active {
-  border-color: #323232;
-}
-main .comments-forms__content-sec textarea.filled {
-  border-color: #E1E1E1;
-}
-main .comments-forms__content-sec textarea.error {
-  border-color: #D22D2D;
 }
 main .comments-forms__content-sec textarea::-moz-placeholder {
   color: #000000;
@@ -525,6 +523,10 @@ main .comments-list__img-color {
   main .comments-list__img {
     margin-top: 1.6rem;
   }
+}
+main .comments-list__text {
+  width: 88%;
+  overflow-wrap: break-word;
 }
 main .comments-list__text-first {
   flex-direction: row;
@@ -589,6 +591,12 @@ main .comments-list__text-second p {
   main .comments {
     margin: 3rem 25rem 0;
   }
+}
+main .comments #fullName.error {
+  border-color: rgb(255, 0, 0);
+}
+main .comments #comments {
+  resize: none;
 }
 
 .footer {

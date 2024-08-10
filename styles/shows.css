@@ -290,6 +290,12 @@ main .shows-subtitle #hide {
   visibility: hidden;
   width: 20vw;
 }
+main .shows-subtitle #date {
+  width: 4rem;
+}
+main .shows-subtitle #venue {
+  width: 3.8rem;
+}
 main .shows-list ul {
   padding: 0;
 }
@@ -299,7 +305,7 @@ main .shows-list ul {
   }
 }
 main .shows-list__li {
-  margin: 1rem 0 0 0;
+  padding: 1rem 0 1rem 0;
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -308,13 +314,19 @@ main .shows-list__li {
   gap: 0.95rem;
   border-bottom: 1.6px solid #E1E1E1;
   position: relative;
+  cursor: pointer;
   background-color: #FFFFFF;
+}
+main .shows-list__li.selected {
+  background-color: #E1E1E1;
+}
+main .shows-list__li:not(.selected):hover {
+  background-color: #FAFAFA;
 }
 main .shows-list__li-item {
   margin: 0 0 0 1rem;
 }
-main .shows-list__li-item h2,
-main .shows-list__li-item h3 {
+main .shows-list__li-item h2, main .shows-list__li-item h3 {
   margin: 0;
 }
 main .shows-list__li-item h2 {
@@ -337,14 +349,13 @@ main .shows-list__li-item h3 {
 @media (min-width: 768px) {
   main .shows-list__li-item h3 {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 1rem;
   }
 }
+main .shows-list__li-button {
+  text-align: center;
+}
 main .shows-list__li-button button {
-  margin: 0 1rem 1rem 1rem;
   width: 90vw;
   height: 2.5rem;
   background-color: #323232;
@@ -355,22 +366,16 @@ main .shows-list__li-button button {
 }
 @media (min-width: 768px) {
   main .shows-list__li-button button {
+    align-items: center;
     width: 20vw;
-    margin: 0.4rem 1rem 0.8rem 1rem;
+    margin: 0 1rem 0;
   }
 }
 @media (min-width: 768px) {
   main .shows-list__li {
-    display: flex;
     flex-direction: row;
     position: relative;
   }
-}
-main .shows-list__li.selected {
-  background-color: #E1E1E1;
-}
-main .shows-list__li:hover {
-  background-color: #FAFAFA;
 }
 main .shows-list #date-id {
   font-weight: 600;

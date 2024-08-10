@@ -1,4 +1,6 @@
-let shows = [
+import BandSiteApi from "./band-site-api.js";
+
+/*let shows = [
     {
         date: "Mon Sept 09 2024",
         venue: "Ronald Lane",
@@ -30,32 +32,59 @@ let shows = [
         location: "San Francisco, CA",
     }
 ];
+*/
 
+function formatTimestampToReadableDate(timestamp) {
+    const time = new Date(timestamp);
+    time.setDate(time.getDate() + 1);
+    const day = time.toLocaleDateString('en-US', { weekday: 'short' });
+    const month = time.toLocaleDateString('en-US', { month: 'short' });
+    const date = time.toLocaleDateString('en-US', { day: 'numeric' });
+    const year = time.toLocaleDateString('en-US', { year: 'numeric' });
+
+    return `${day} ${month} ${date} ${year}`;
+}
+
+function selectedListInMercury(event){
+    const selectedLists = document.querySelectorAll(".shows-list__li");
+    
+    for (let i = 0; i < selectedLists.length; i++) {
+        selectedLists[i].classList.remove('selected');
+    }
+
+    event.currentTarget.classList.add('selected');
+}
+
+const bandSiteApi = new BandSiteApi("f1f929f6-6089-4f6c-92cb-5e89ace37ffb")
 const showCard = document.querySelector(".shows");
 
-function renderShowList() {
-
+async function renderShowList() {
+    const shows = await bandSiteApi.getShowsData();
+    console.log("check" + shows);
     const tittleContainer = document.createElement("div");
     tittleContainer.classList.add("shows-title");
     const tittle = document.createElement("h1");
     tittle.innerText = "Shows";
 
     const mainContainer = document.createElement("div");
-    mainContainer.classList.add("shows-main-container");
+    mainContainer.classList.add("shows-sub");
 
     const subTittleContainer = document.createElement("div");
     subTittleContainer.classList.add("shows-subtitle");
 
     const subTittleDateContainer = document.createElement("div");
     const subTittleDate = document.createElement("h2");
+    subTittleDateContainer.setAttribute("id", "date");
     subTittleDate.innerText = "DATE";
 
     const subTittleVenueContainer = document.createElement("div");
     const subTittleVenue = document.createElement("h2");
+    subTittleVenueContainer.setAttribute("id", "venue");
     subTittleVenue.innerText = "VENUE";
 
     const subTittleLocationContainer = document.createElement("div");
     const subTittleLocation = document.createElement("h2");
+    subTittleLocationContainer.setAttribute("id", "location");
     subTittleLocation.innerText = "LOCATION";
 
     const dummyButtonContainer = document.createElement("div");
@@ -72,6 +101,7 @@ function renderShowList() {
 
         const showList = document.createElement("li");
         showList.classList.add("shows-list__li");
+        showList.addEventListener('click', selectedListInMercury);
 
         const dateContainer = document.createElement("div");
         dateContainer.classList.add("shows-list__li-item");
@@ -81,7 +111,7 @@ function renderShowList() {
 
         const date = document.createElement("h3");
         date.setAttribute("id", "date-id");
-        date.innerText = shows[i].date;
+        date.innerText = formatTimestampToReadableDate(shows[i].date);
 
         const venueContainer = document.createElement("div");
         venueContainer.classList.add("shows-list__li-item");
@@ -90,7 +120,7 @@ function renderShowList() {
         venueHeading.innerText = "VENUE";
 
         const venue = document.createElement("h3");
-        venue.innerText = shows[i].venue;
+        venue.innerText = shows[i].place;
 
         const locationContainer = document.createElement("div");
         locationContainer.classList.add("shows-list__li-item");
@@ -123,6 +153,10 @@ function renderShowList() {
         buttonContainer.appendChild(buttonText);
 
         unorderedListContainer.appendChild(showList);
+
+        shows.forEach(show => {
+            const showList = document.createElement("li");
+            showList.classList.add("shows-list__li");})
     }
 
     showCard.appendChild(tittleContainer);
