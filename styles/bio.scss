@@ -121,7 +121,7 @@ main {
         }
     }
 
-    .mid {
+    .gallery {
         padding: 1rem;
 
         &__headline {
@@ -241,7 +241,7 @@ main {
 
     }
 
-    .bottom {
+    .photo-gallery{
         background-color: $Alabaster;
         padding: 1rem;
 
@@ -431,7 +431,7 @@ main {
                         border-radius: .25rem;
                         font-size: .8rem;
                         @include mobile-footer-copy;
-                        color: $Alabaster;
+                        color: $BandSite-Black;
 
                         @include tablet {
                             padding: 1rem;

@@ -77,7 +77,7 @@ async function getPostsAndAppendToList() {
 
 commentForm.addEventListener("submit", async function(event) {
     event.preventDefault();
-    console.log("comment submitted");
+    
 
     const personName = event.target.fullName.value;
     const personComment = event.target.comments.value;
@@ -98,9 +98,9 @@ commentForm.addEventListener("submit", async function(event) {
         comment: personComment,
       };
 
-    console.log(newComment);
+  
 
-    // comments.unshift(newComment);
+ 
 
 
     const response = await bandSiteApi.postCommentsData(newComment);
