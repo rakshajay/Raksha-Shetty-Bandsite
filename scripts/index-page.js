@@ -16,97 +16,88 @@ import BandSiteApi from "./band-site-api.js";
 //         time: "10/20/2023"
 //     }
 // ];
-const bandSiteApi = new BandSiteApi("f1f929f6-6089-4f6c-92cb-5e89ace37ffb")
+const bandSiteApi = new BandSiteApi("f1f929f6-6089-4f6c-92cb-5e89ace37ffb");
 const commentForm = document.querySelector(".comments-forms__content");
 const commentCard = document.querySelector(".comments-list");
 
-
-
 async function getPostsAndAppendToList() {
-    const comments = await bandSiteApi.getCommentsData();
+  const comments = await bandSiteApi.getCommentsData();
 
-    commentCard.innerHTML = "";
+  commentCard.innerHTML = "";
 
-    for (let i = 0; i < comments.length; i++) {
-        const commentItem = document.createElement('div');
-        commentItem.classList.add('comments-list__item');
-        
-        const commentImgContainer = document.createElement('div');
-        commentImgContainer.classList.add('comments-list__img');
-       
-        const commentImg = document.createElement('div');
-        commentImg.classList.add('comments-list__img-color');
-                
-        const commentText = document.createElement('div');
-        commentText.classList.add('comments-list__text');
+  for (let i = 0; i < comments.length; i++) {
+    const commentItem = document.createElement("div");
+    commentItem.classList.add("comments-list__item");
 
-        const textFirst = document.createElement('div');
-        textFirst.classList.add('comments-list__text-first');
-        
-        const person = document.createElement('h3');
-        person.classList.add('name');
-        person.innerText = comments[i].name;
+    const commentImgContainer = document.createElement("div");
+    commentImgContainer.classList.add("comments-list__img");
 
-        const currentTime = document.createElement('h2');
-        currentTime.classList.add('time');
-        currentTime.innerText = new Date(comments[i].timestamp).toLocaleDateString();
-        
+    const commentImg = document.createElement("div");
+    commentImg.classList.add("comments-list__img-color");
 
-        const textSecond = document.createElement('div');
-        textSecond.classList.add('comments-list__text-second');
-        
-        const comment = document.createElement('p');
-        comment.classList.add('comment');
-        comment.innerText = comments[i].comment;
+    const commentText = document.createElement("div");
+    commentText.classList.add("comments-list__text");
 
-        textFirst.appendChild(person);
-        textFirst.appendChild(currentTime);
-        textSecond.appendChild(comment);
+    const textFirst = document.createElement("div");
+    textFirst.classList.add("comments-list__text-first");
 
-        commentText.appendChild(textFirst);
-        commentText.appendChild(textSecond);
+    const person = document.createElement("h3");
+    person.classList.add("name");
+    person.innerText = comments[i].name;
 
-        commentItem.appendChild(commentImgContainer);
-        commentItem.appendChild(commentText);
+    const currentTime = document.createElement("h2");
+    currentTime.classList.add("time");
+    currentTime.innerText = new Date(
+      comments[i].timestamp
+    ).toLocaleDateString();
 
-        commentImgContainer.appendChild(commentImg);
+    const textSecond = document.createElement("div");
+    textSecond.classList.add("comments-list__text-second");
 
-        commentCard.appendChild(commentItem);
-    }
+    const comment = document.createElement("p");
+    comment.classList.add("comment");
+    comment.innerText = comments[i].comment;
+
+    textFirst.appendChild(person);
+    textFirst.appendChild(currentTime);
+    textSecond.appendChild(comment);
+
+    commentText.appendChild(textFirst);
+    commentText.appendChild(textSecond);
+
+    commentItem.appendChild(commentImgContainer);
+    commentItem.appendChild(commentText);
+
+    commentImgContainer.appendChild(commentImg);
+
+    commentCard.appendChild(commentItem);
+  }
 }
 
-commentForm.addEventListener("submit", async function(event) {
-    event.preventDefault();
-    
+commentForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
 
-    const personName = event.target.fullName.value;
-    const personComment = event.target.comments.value;
+  const personName = event.target.fullName.value;
+  const personComment = event.target.comments.value;
 
-    const nameBox = document.getElementById('fullName'); 
+  const nameBox = document.getElementById("fullName");
 
-    if (personName.value == "") {
-        nameBox.classList.add('error');
-        return; 
-    } else {
-        nameBox.classList.remove('error');
+  if (personName.value == "") {
+    nameBox.classList.add("error");
+    return;
+  } else {
+    nameBox.classList.remove("error");
+  }
 
-    }
-    
+  const newComment = {
+    name: personName,
+    comment: personComment,
+  };
 
-    const newComment = {
-        name: personName,
-        comment: personComment,
-      };
+  const response = await bandSiteApi.postCommentsData(newComment);
 
-  
-
- 
-
-
-    const response = await bandSiteApi.postCommentsData(newComment);
-
-    getPostsAndAppendToList();
-    event.target.reset();
+  getPostsAndAppendToList();
+  event.target.reset();
 });
 
 getPostsAndAppendToList();
